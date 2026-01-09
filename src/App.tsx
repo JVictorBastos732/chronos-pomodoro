@@ -2,9 +2,10 @@ import './styles/global.css';
 import './styles/themes.css';
 
 import { Container } from './components/Container';
-import { Heading } from './components/Heading';
 import { Logo } from './components/Logo';
 import { Menu } from './components/Menu';
+import { CountDown } from './components/CountDown';
+import { Form } from './components/Form';
 
 function App() {
   return (
@@ -18,7 +19,11 @@ function App() {
       </Container>
 
       <Container>
-        <Heading>Contato</Heading>
+        <CountDown />
+      </Container>
+
+      <Container>
+        <Form></Form>
       </Container>
     </>
   );
