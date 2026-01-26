@@ -1,13 +1,15 @@
 import styles from './styles.module.css';
-import { CircleIcon, PlayIcon } from 'lucide-react';
 import { DefaultInput } from '../DefaultInput';
+import { Cycles } from '../Cycles';
+import { DefaultButton } from '../DefaultButton';
+import { PlayCircleIcon } from 'lucide-react';
 
 export function Form() {
     return (
         <>
             <form action="" className={styles.form}>
           <div className={styles.formRow}>
-            <DefaultInput type='text' id='meuInput' labelText='Task' placeholder='Digite algo' defaultValue='Preenchendo valor'></DefaultInput>
+            <DefaultInput type='text' id='meuInput' labelText='Task' placeholder='Digite algo'></DefaultInput>
           </div>
 
           <div className={styles.formRow}>
@@ -15,20 +17,11 @@ export function Form() {
           </div>
 
           <div className={styles.formRow}>
-            <p>Ciclos</p>
-            <div>
-              <CircleIcon></CircleIcon>
-              <CircleIcon></CircleIcon>
-              <CircleIcon></CircleIcon>
-              <CircleIcon></CircleIcon>
-              <CircleIcon></CircleIcon>
-            </div>
+            <Cycles></Cycles>
           </div>
 
           <div className={styles.formRow}>
-            <button>
-              <PlayIcon></PlayIcon>
-            </button>
+            <DefaultButton icon={ <PlayCircleIcon/> } color='green'/>
           </div>
         </form>
         </>
