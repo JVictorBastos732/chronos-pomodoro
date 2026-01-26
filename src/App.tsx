@@ -1,38 +1,11 @@
 import './styles/global.css';
 import './styles/themes.css';
 
-import { Container } from './components/Container';
-import { Logo } from './components/Logo';
-import { Menu } from './components/Menu';
-import { CountDown } from './components/CountDown';
-import { Form } from './components/Form';
-import { Footer } from './components/Footer';
+import { AboutPomodoro } from './pages/AboutPomodoro';
 
-function App() {
+export function App() {
 
   return (
-    <>
-      <Container>
-        <Logo></Logo>
-      </Container>
-
-      <Container>
-        <Menu />
-      </Container>
-
-      <Container>
-        <CountDown />
-      </Container>
-
-      <Container>
-        <Form></Form>
-      </Container>
-
-      <Container>
-        <Footer></Footer>
-      </Container>
-    </>
+    <AboutPomodoro />
   );
 };
-
-export { App };
