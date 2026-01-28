@@ -1,11 +1,13 @@
 import './styles/global.css';
 import './styles/themes.css';
 
-import { AboutPomodoro } from './pages/AboutPomodoro';
+import { Home } from './pages/Home';
+import { TaskContextProvider } from './contexts/TaskContext/TaskContextProvider';
 
 export function App() {
-
   return (
-    <AboutPomodoro />
+    <TaskContextProvider>
+      <Home />
+    </TaskContextProvider>
   );
-};
+}

@@ -12,7 +12,7 @@ export function Home() {
         </Container>
 
         <Container>
-          <Form></Form>
+          <Form ></Form>
         </Container>
       </MainTemplate>
     </>

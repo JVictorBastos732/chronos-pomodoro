@@ -4,6 +4,10 @@ import { Cycles } from '../Cycles';
 import { DefaultButton } from '../DefaultButton';
 import { PlayCircleIcon } from 'lucide-react';
 
+type FormProps = {
+    workTime: number;
+}
+
 export function Form() {
     return (
         <>
@@ -13,7 +17,7 @@ export function Form() {
           </div>
 
           <div className={styles.formRow}>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>O próximo intervalo é de 25min</p>
           </div>
 
           <div className={styles.formRow}>
