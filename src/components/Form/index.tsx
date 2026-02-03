@@ -10,6 +10,8 @@ import { getNextCicle } from '../../utils/getNextCycle';
 import { getNextCicleType } from '../../utils/getNextCycleType';
 import { TaskActionsTypes } from '../../contexts/TaskContext/taskActions';
 import { Tips } from '../Tips';
+import { toast } from 'react-toastify';
+import { showMessage } from '../../adapters/showMessage';
 
 export function Form() {
   const { state, dispatch } = useTaskContext();
@@ -20,13 +22,14 @@ export function Form() {
 
   function handleCreateNewTask(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    showMessage.dismiss();
 
     if (taskNameInput.current === null) return;
 
     const taskName = taskNameInput.current.value.trim();
 
     if (!taskName) {
-      alert('Insira o nome da task');
+      toast.warning('Insira o nome da task');
       return;
     }
 
@@ -41,9 +44,14 @@ export function Form() {
     };
 
     dispatch({ type: TaskActionsTypes.START_TASK, payload: newTask });
+
+    showMessage.succes('Tarefa iniciada');
   }
 
   function handleInterruptTask() {
+    showMessage.dismiss();
+    showMessage.error('Tarefa interrompida');
+
     dispatch({ type: TaskActionsTypes.INTERRUPT_TASK });
   }
 
@@ -58,7 +66,6 @@ export function Form() {
             placeholder='Digite algo'
             ref={taskNameInput}
             disabled={!!state.activeTask}
-            onClick={handleInterruptTask}
             key='button_submit'
           ></DefaultInput>
         </div>
