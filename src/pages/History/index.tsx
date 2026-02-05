@@ -11,7 +11,6 @@ import { useEffect, useState } from 'react';
 
 import styles from './styles.module.css';
 import { TaskActionsTypes } from '../../contexts/TaskContext/taskActions';
-import { toast } from 'react-toastify';
 import { showMessage } from '../../adapters/showMessage';
 
 export function History() {
