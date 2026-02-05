@@ -34,19 +34,19 @@ export function Tips({ state, nextCycle }: TipProps) {
     ),
     shortBreakTime: (
       <span>
-        <b>O próximo descanço é de {state.config.shortBreakTime}min.</b>
+        <b>O próximo descanso é de {state.config.shortBreakTime}min.</b>
       </span>
     ),
     longBreakTime: (
       <span>
-        <b>O próximo descanço será longo.</b>
+        <b>O próximo descanso será longo.</b>
       </span>
     ),
   };
 
   return (
     <>
-      {!!state.activeTask && tipsForWhenActiveTask[state.activeTask.status]}
+      {!!state.activeTask && tipsForWhenActiveTask[state.activeTask.type]}
       {!state.activeTask && tipsForNoActiveTask[nextCycleType]}
     </>
   );

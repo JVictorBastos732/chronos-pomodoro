@@ -16,6 +16,7 @@ import { showMessage } from '../../adapters/showMessage';
 export function Form() {
   const { state, dispatch } = useTaskContext();
   const taskNameInput = useRef<HTMLInputElement>(null);
+  const lastNameTask = state.tasks[state.tasks.length - 1]?.name || '';
 
   const nextCycle = getNextCicle(state.currentCycle);
   const nextCycleType = getNextCicleType(nextCycle);
@@ -40,7 +41,7 @@ export function Form() {
       completeDate: null,
       interruptDate: null,
       duration: state.config[nextCycleType],
-      status: nextCycleType,
+      type: nextCycleType,
     };
 
     dispatch({ type: TaskActionsTypes.START_TASK, payload: newTask });
@@ -67,6 +68,7 @@ export function Form() {
             ref={taskNameInput}
             disabled={!!state.activeTask}
             key='button_submit'
+            defaultValue={lastNameTask}
           ></DefaultInput>
         </div>
 
